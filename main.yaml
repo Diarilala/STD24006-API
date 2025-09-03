@@ -1,0 +1,76 @@
+openapi: 3.0.3
+info:
+  title: STD24006
+  description: This is a specification of STD24006
+  version: 1.0.0
+servers:
+  - url: 'https://localhost:8000'
+paths:
+  "/ping":
+    get:
+      responses:
+        200:
+          description: get pong
+          content:
+            text/plain:
+              schema:
+                example: "pong"
+
+  "/cars":
+    post:
+      responses:
+        201:
+          description: create cars
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    identifier:
+                      type: string
+                    brand:
+                      type: string
+                    model:
+                      type: string
+                    characteristics:
+                      type: object
+                      properties:
+                        max_speed:
+                          type: integer
+                        max_fuel_capacity:
+                          type: integer
+
+    get:
+      responses:
+        200:
+          description: get all cars
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    identifier:
+                      type: string
+                    brand:
+                      type: string
+                    model:
+                      type: string
+                    characteristics:
+                      type: object
+                      properties:
+                        max_speed:
+                          type: integer
+                        max_fuel_capacity:
+                          type: integer
+
+
+
+
+
+
+
+  
