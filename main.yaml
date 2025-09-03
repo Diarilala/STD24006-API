@@ -66,6 +66,29 @@ paths:
                           type: integer
                         max_fuel_capacity:
                           type: integer
+  "/cars/{id}":
+    get:
+      responses:
+        200:
+          description: get cars by id
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  identifier:
+                    type: string
+                  brand:
+                    type: string
+                  model:
+                    type: string
+                  characteristics:
+                    type: object
+                    properties:
+                      max_speed:
+                        type: integer
+                      max_fuel_capacity:
+                        type: integer
 
 
 
